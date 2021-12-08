@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LabsApplication<labs>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "co.edu.unal.software_engineering.labs.LabsApplication",
+            "projectName": "labs",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-LabsApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "co.edu.unal.software_engineering.labs.LabsApplication",
+            "args": ""
+        }
+    ]
+}
