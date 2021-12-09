@@ -1,16 +1,34 @@
 <template>
+<div class="container-fluid">
   <div class="row">
-    <Course v-for="enrolled in enrollments"
-            :key="enrolled.courseId + '-' + enrolled.role.id"
-            :enrolled="enrolled"></Course>
+    <div class="col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
+      <div class="mt-5">
+        <h1> Cursos Inscritos</h1>
+        <div class="border border-primary rounded form-inline d-flex justify-content-center">
+          <Course v-for="enrolled in enrollments"
+            v-bind:key="enrolled.courseId + '-' + enrolled.role.id"
+            v-bind:enrolled="enrolled"
+            ></Course>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-12">. </div>
+            <button v-on:click= "regresar" class="col-md-4 offset-sm-1 offset-md-2 btn btn-primary mx-auto ">
+                    Regresar
+            </button>
+        </div>
+        
+      </div>
+    </div>
   </div>
+
+</div>
+  
 </template>
 
 <script>
 import axios from 'axios';
 import {getAuthenticationToken} from '@/dataStorage';
 import Course from "@/components/Course";
-
 
 const requestPath = '/mis-cursos';
 
@@ -29,10 +47,17 @@ export default {
           alert( 'Error en la respuesta del servidor' );
         }else{
           this.enrollments = response.data;
+          console.log(response.data)
+          
         }
       } ).catch( error => {
         alert( 'Error con la conexión al servidor' );
       } );
+  },
+  methods:{
+    regresar(){
+        this.$router.push( {name: 'home'} )
+      },
   }
 }
 </script>

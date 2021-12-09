@@ -1,8 +1,13 @@
 <template>
   <div class="col-12 text-center">
-    <div v-for="role in roles" :key="role.id">
-      <h1>{{ role.roleName }}</h1>
+    <h1>Roles</h1>
+    <div class="row col-12">
+      <div v-for="role in roles" :key="role.id">
+        <h1>{{ role.roleName }}</h1>
+      </div>
+
     </div>
+    
   </div>
 </template>
 
@@ -26,6 +31,7 @@ export default {
             alert( 'Error Obteniendo sus roles' );
           }else{
             this.roles = response.data;
+            console.log(this.roles)
           }
         } ).catch( error => {
           alert( 'Error en la petición' );

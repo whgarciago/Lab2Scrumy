@@ -43,7 +43,7 @@ export default new Router({
           path: "roles",
           name: "roles",
           component: Roles
-        }
+        } 
       ]
     }
   ]
