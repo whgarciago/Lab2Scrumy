@@ -15,7 +15,8 @@
           <label class="custom-label col-md-3 display" for="rol">Tipo de Usuario</label>
           <select id="rol" class="form-control col-12 col-sm-10 col-md-7 offset-sm-1" v-model="role" required>
             <option value="" disabled selected>-- Seleccione un Rol --</option>
-            <option v-for="role in roles" :key="role.id" :value="role.id">{{role.roleName}}</option>
+            <option :value=1>Estudiante</option>
+            <option :value=2>Profesor</option>
           </select>
         </div>
         <div class="col-12 mb-3">
@@ -31,6 +32,7 @@
 
 <script>
   import axios from 'axios';
+  import {getAuthenticationToken} from '@/dataStorage';
 
   export default {
     name: "AddRole",
@@ -64,7 +66,7 @@
               password: this.password
             }, {
               params: {
-                access_token: localStorage.getItem( "token" )
+                access_token: getAuthenticationToken( )
               }
             }
           ).then( response => {
@@ -86,7 +88,7 @@
       },
       buildURI( ){
         let associatePath = "/registro/nuevo-rol/";
-        return this.$store.state.backURL + associatePath + this.role;
+        return this.$store.state.backURL + associatePath +this.role;
       }
     }
 
