@@ -11,8 +11,7 @@
             ></Course>
         </div>
         <div class="row align-items-center">
-          <div class="col-md-12">. </div>
-            <button v-on:click= "regresar" class="col-md-4 offset-sm-1 offset-md-2 btn btn-primary mx-auto ">
+            <button v-on:click= "regresar" class="col-3 btn btn-primary mt-5 ">
                     Regresar
             </button>
         </div>

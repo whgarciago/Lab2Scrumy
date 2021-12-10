@@ -45,8 +45,8 @@
       crearCurso(event){
         const coursePath = '/profesor/crear-curso';
         axios.post(this.$store.state.backURL+ coursePath,{
-          nombreCurso:this.nombreCurso,
-          numeroHoras:this.numeroHoras
+          courseName:this.nombreCurso,
+          durationHours:this.numeroHoras
         },
          {
               params: {

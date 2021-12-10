@@ -1,13 +1,11 @@
 <template>
   <div class="col-12 text-center">
-    <h1>Roles</h1>
-    <div class="row col-12">
-      <div v-for="role in roles" :key="role.id">
-        <h1>{{ role.roleName }}</h1>
+    <h2>Roles asignados</h2>
+      <div class="col  form-inline d-flex justify-content-center mt-5">
+          <div v-for="role in roles" :key="role.id" class="col border border-primary rounded  d-flex justify-content-center m-5">
+            <h3>{{ role.roleName }}</h3>
+          </div>
       </div>
-
-    </div>
-    
   </div>
 </template>
 
@@ -36,7 +34,7 @@ export default {
         } ).catch( error => {
           alert( 'Error en la petición' );
           console.log( error );
-        } );
+    } );
   }
 }
 </script>
